@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      width: 280px;
+      font: 13px/1.5 "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+      padding: 14px 16px 12px;
+    }
+    h1 { font-size: 14px; margin: 0 0 4px; font-weight: 600; }
+    .sub { color: #6b7280; font-size: 12px; margin: 0 0 12px; }
+    .row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; padding: 8px 0; border-top: 1px solid rgba(127,127,127,.22);
+    }
+    .label { font-weight: 500; }
+    .hint { color: #6b7280; font-size: 11.5px; margin-top: 2px; }
+    /* 开关 */
+    .switch { position: relative; width: 40px; height: 22px; flex: none; }
+    .switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .slider {
+      position: absolute; inset: 0; cursor: pointer; border-radius: 999px;
+      background: #9ca3af; transition: background .18s;
+    }
+    .slider::before {
+      content: ""; position: absolute; width: 18px; height: 18px; left: 2px; top: 2px;
+      background: #fff; border-radius: 50%; transition: transform .18s;
+      box-shadow: 0 1px 2px rgba(0,0,0,.25);
+    }
+    .switch input:checked + .slider { background: #4d6bfe; }
+    .switch input:checked + .slider::before { transform: translateX(18px); }
+    .switch input:focus-visible + .slider { outline: 2px solid #4d6bfe; outline-offset: 2px; }
+    .foot { margin-top: 10px; color: #6b7280; font-size: 11.5px; }
+    kbd {
+      font: inherit; background: rgba(127,127,127,.18); border-radius: 4px;
+      padding: 0 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>DeepSeek 思考过程折叠</h1>
+  <p class="sub">让「已深度思考」默认收起，只显示最终回答。</p>
+
+  <div class="row">
+    <div>
+      <div class="label">自动折叠思考过程</div>
+      <div class="hint">关闭后，思考过程恢复到官网默认的展开状态。</div>
+    </div>
+    <label class="switch" aria-label="自动折叠思考过程">
+      <input type="checkbox" id="enabled" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <p class="foot">
+    只折叠一次；你手动展开过的思考过程不会被再次关闭。<br />
+    设置即时生效，改动后回到 <kbd>chat.deepseek.com</kbd> 即可。
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
