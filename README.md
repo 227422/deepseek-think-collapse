@@ -1,3 +1,10 @@
+<div align="center">
+  <a href="https://github.com/227422/deepseek-think-collapse/releases/latest">
+    <img src="https://img.shields.io/badge/📥_点击此处下载最新版安装包-2ea44f?style=for-the-badge" alt="Download">
+  </a>
+  <p>下载解压后，在 Edge 扩展页面（edge://extensions/）开启开发者模式，点击“加载解压缩的扩展”选中该文件夹即可。</p>
+</div>
+
 # DeepSeek 思考过程折叠
 
 > 让 DeepSeek 网页版的「已深度思考」推理过程默认收起，只看最终回答。
